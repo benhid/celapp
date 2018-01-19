@@ -4,7 +4,8 @@ import path from 'path';
 import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import IndexPage from './components/IndexPage';
+import Menu from './components/Menu';
+import OficinaInformacion from './components/OficinaInformacion';
 
 let app = express();
 
@@ -17,8 +18,10 @@ app.use(express.static('src/static'));
 
 // GET /
 app.get('/', function (req, res) {
-  var staticMarkup = renderToString(<IndexPage/>);
-  res.render('index', { markup: staticMarkup })
+  var staticMenu = renderToString(<Menu/>);
+  var staticOficinaInformacion = renderToString(<OficinaInformacion/>);
+
+  res.render('layout', { menu: staticMenu, oficinas: staticOficinaInformacion })
 })
 
 // Start server
