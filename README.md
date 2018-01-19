@@ -6,10 +6,10 @@ Start our server using:
 
 ```shell
 $ npm install
-$ npm start
+$ npm run server
 ```
 
-Now you should now be able to visit `http://127.0.0.1:1337` (Windows users, see: [react-native/issues/8678](https://github.com/facebook/react-native/issues/8678).
+Now you should now be able to visit `http://localhost:8090/`.
 
 ### Watching file changes with `webpack-dev-server`
 
@@ -18,13 +18,12 @@ restarted automatically.
 
 ### Production use
 
-Now we can use `npm run bundle` for precompiling our assets or just `npm run serve`
+Now we can use `npm run bundle` for precompiling our assets or just `npm run server`
 for precompiling and starting our server in production:
 
 ```shell
 $ npm run serve
 ```
-
 
 ## Active development team
 

@@ -1,28 +1,28 @@
-var webpack = require('webpack');
-var path = require('path');
+"use strict";
 
-var BUILD_DIR = path.resolve(__dirname, 'public');
-var APP_DIR = path.resolve(__dirname, 'src/components');
+const webpack = require('webpack');
+const path = require('path');
 
-var config = {
-  entry: APP_DIR + '/App.jsx',
-  output: {
-    path: BUILD_DIR,
-    filename: 'bundle.js',
-    publicPath: 'public'
-  },
-  module : {
-    loaders : [
-      {
-        test : /\.jsx?/,
-        include : APP_DIR,
-        loader : 'babel-loader'
-      }
-    ]
-  },
+module.exports = {
+  entry: path.join(__dirname, 'src', 'client.js'),
   devServer: {
-    contentBase: path.resolve(__dirname, 'src/')
+    inline: true,
+    port: 3333,
+    contentBase: "src/static/"
+  },
+  output: {
+    path: path.join(__dirname, 'src', 'static', 'js'),
+    publicPath: "/js/",
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders: [{
+      test: path.join(__dirname, 'src'),
+      loader: ['babel-loader'],
+      query: {
+        cacheDirectory: 'babel_cache',
+        presets: ['react', 'es2015']
+      }
+    }]
   }
 };
-
-module.exports = config;
