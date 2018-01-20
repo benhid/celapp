@@ -22,9 +22,9 @@ class OficinaInformacion extends React.Component {
   render () {
     return (
       
-      <section id="cta-1" class="section-padding">
-      <div class="container">
-        <div class="row">
+      <section id="cta-1" className="section-padding">
+      <div className="container">
+        <div className="row">
       <div className="schedule-tab">
         <div className="col-md-4 col-sm-4 bor-left">
           <div className="mt-boxy-color"></div>

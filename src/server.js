@@ -27,7 +27,7 @@ app.get('/', function (req, res) {
   var staticServicios = renderToString(<Servicios/>);
   var questionSet = renderToString(<QuestionsSet/>);
 
-  res.render('layout', { 
+  res.render('example', { 
     menu: staticMenu, 
     oficinas: staticOficinaInformacion,
     question_set: questionSet,
