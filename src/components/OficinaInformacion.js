@@ -21,6 +21,10 @@ class Oficina extends React.Component {
 class OficinaInformacion extends React.Component {
   render () {
     return (
+      
+      <section id="cta-1" class="section-padding">
+      <div class="container">
+        <div class="row">
       <div className="schedule-tab">
         <div className="col-md-4 col-sm-4 bor-left">
           <div className="mt-boxy-color"></div>
@@ -60,6 +64,9 @@ class OficinaInformacion extends React.Component {
           </div>
         </div>
       </div>
+      </div>
+        </div>
+      </section>
     );
   }
 }
