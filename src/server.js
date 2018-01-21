@@ -4,11 +4,10 @@ import path from 'path';
 import express from 'express';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import Menu from './components/Menu';
-import OficinaInformacion from './components/OficinaInformacion';
-import QuestionsSet from './components/QuestionsSet';
-import Cabecera from './components/Cabecera';
-import Servicios from './components/Servicios';
+
+// React components
+import Index from './components/Index';
+import SoyCeliaco from './components/SoyCeliaco';
 
 let app = express();
 
@@ -21,18 +20,15 @@ app.use(express.static('src/static'));
 
 // GET /
 app.get('/', function (req, res) {
-  var staticMenu = renderToString(<Menu/>);
-  var staticCabecera = renderToString(<Cabecera/>);
-  var staticOficinaInformacion = renderToString(<OficinaInformacion/>);
-  var staticServicios = renderToString(<Servicios/>);
-  var questionSet = renderToString(<QuestionsSet/>);
+  res.render('base_layout.ejs', {
+    contenido: renderToString(<Index/>)
+   })
+})
 
-  res.render('example', { 
-    menu: staticMenu, 
-    oficinas: staticOficinaInformacion,
-    question_set: questionSet,
-    cabecera: staticCabecera,
-    servicios: staticServicios
+// GET /soyceliaco
+app.get('/soyceliaco', function (req, res) {
+  res.render('base_layout.ejs', {
+    contenido: renderToString(<SoyCeliaco/>)
    })
 })
 

@@ -1,10 +1,9 @@
 'use strict';
-//Dependencies
+
 import React from 'react';
 import {render} from 'react-dom';
 import Form from "react-jsonschema-form";
 
-//Components
 const schema = {
   title: "Formulario Celiacos",
   type: "object",
@@ -14,17 +13,17 @@ const schema = {
     done: {type: "boolean", title: "Ya has terminado?", default: false}
   }
 };
+
 const log = (type) => console.log.bind(console, type);
 
 class QuestionsSet extends React.Component {
-  
   render () {
     return (
       <div>
         <Form schema={schema}
-        onChange={log("changed")}
-        onSubmit={log("submitted")}
-        onError={log("errors")} />
+              onChange={log("changed")}
+              onSubmit={log("submitted")}
+              onError={log("errors")} />
       </div>
     );
   }

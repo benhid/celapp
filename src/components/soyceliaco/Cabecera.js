@@ -2,8 +2,6 @@
 
 import React from 'react';
 import {render} from 'react-dom';
-import Menu from './Menu'
-
 
 class Cabecera extends React.Component {
   render () {
@@ -21,9 +19,6 @@ class Cabecera extends React.Component {
                           </button>
                   <a className="navbar-brand" href="#"><img src="img/logo.png" className="img-responsive"/></a>
                 </div>
-                <div className="collapse navbar-collapse navbar-right" id="myNavbar">
-                    <Menu/>
-                </div>
               </div>
             </div>
           </nav>
@@ -35,12 +30,12 @@ class Cabecera extends React.Component {
                 </div>
                 <div className="banner-text text-center">
                   <h1 className="white">Plataforma para diagnosticos de celiaquía</h1>
-                  <p className="intro-text">Una página web gratuita, donde la gente podrá realizar encuestas para poder diagnosticar síntomas de celiaquía y obtener información sobre la misma.
-                    <br/>Creado por Miguel Angel, Daniel, Maria Jose, Antonio y Cesar</p>
-                  <a href="#contact" className="btn btn-appoint">Make an Appointment.</a>
+                  <p className="intro-text">
+                    A continuación va a relizar...
+                  </p>
                 </div>
                 <div className="overlay-detail text-center">
-                  <a href="#service"><i className="fa fa-angle-down"></i></a>
+                  <a href="#"><i className="fa fa-angle-down"></i></a>
                 </div>
               </div>
             </div>
