@@ -18,7 +18,7 @@ class Cabecera extends React.Component {
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                           </button>
-                  <a className="navbar-brand" href="#"><img src="img/logo.png" className="img-responsive"/></a>
+                  <a className="navbar-brand" href="#"><img src="img/logo.png" className="img-responsive" style={{width: 140, marginTop: -16}}/></a>
                 </div>
                 <div className="collapse navbar-collapse navbar-right" id="myNavbar">
                     <Menu/>
