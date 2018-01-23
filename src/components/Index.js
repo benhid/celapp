@@ -14,9 +14,9 @@ class Index extends React.Component {
     return (
       <div>
         <Cabecera/>
+		<SobreApp/>
         <Servicios/>
         <Oficinas/>
-        <SobreApp/>
         <Equipo/>
         <FormularioContacto/>
       </div>

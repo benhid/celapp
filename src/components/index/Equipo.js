@@ -12,8 +12,8 @@ class Miembro extends React.Component {
           <h3>{this.props.name}</h3>
           <p>Doctor</p>
           <ul className="list-inline">
-            <li><a href={ `#${this.props.facebook}` }><i className="fa fa-facebook"></i></a></li>
-            <li><a href={ `#${this.props.twitter}` }><i className="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/carlos.desolaearle?lst=1755271254%3A546449003%3A1516708830"><i className="fa fa-facebook"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/carlos-miguel-de-sola-earle-723a622a/"><i className="fa fa-linkedin"></i></a></li>
           </ul>
         </div>
       </div>
@@ -28,30 +28,12 @@ class Equipo extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2 className="ser-title">Nuestro equipo</h2>
+              <h2 className="ser-title">SOBRE MI</h2>
               <hr className="botm-line"></hr>
             </div>
             <div className="col-md-3 col-sm-3 col-xs-6">
-              <Miembro name="Jessica Wall"
-                img="img/doctor1.jpg"
-                facebook="#"
-                twitter="#"/>
-            </div>
-            <div className="col-md-3 col-sm-3 col-xs-6">
-            <Miembro name="Jessica Wall"
-              img="img/doctor2.jpg"
-              facebook="#"
-              twitter="#"/>
-            </div>
-            <div className="col-md-3 col-sm-3 col-xs-6">
-            <Miembro name="Jessica Wall"
-              img="img/doctor3.jpg"
-              facebook="#"
-              twitter="#"/>
-            </div>
-            <div className="col-md-3 col-sm-3 col-xs-6">
-            <Miembro name="Jessica Wall"
-              img="img/doctor4.jpg"
+            <Miembro name="Carlos De Sola Earle"
+              img="img/Carlos.jpg"
               facebook="#"
               twitter="#"/>
             </div>

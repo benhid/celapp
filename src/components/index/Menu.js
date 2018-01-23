@@ -16,8 +16,8 @@ class Menu extends React.Component {
     return (
       <ul className="nav navbar-nav">
         <Section name="Inicio" href="banner"/>
-        <Section name="Servicios" href="service"/>
         <Section name="Información" href="about"/>
+		<Section name="Servicios" href="service"/>
         <Section name="Contacto" href="contact"/>
       </ul>
     );
