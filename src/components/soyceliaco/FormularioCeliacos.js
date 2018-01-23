@@ -4,15 +4,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import Form from "react-jsonschema-form";
 
-const schema = {
-  title: "Formulario Celiacos",
-  type: "object",
-  required: ["title"],
-  properties: {
-    title: {type: "string", title: "Eres celiaco?", default: "Ni puta idea"},
-    done: {type: "boolean", title: "Ya has terminado?", default: false}
-  }
-};
+/* falta hacer la llamada a FormQuestions.js en la carpeta src/data/ */
 
 const log = (type) => console.log.bind(console, type);
 
