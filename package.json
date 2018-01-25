@@ -16,6 +16,7 @@
     "ejs": "^2.5.1",
     "express": "^4.14.0",
     "express-session": "^1.15.6",
+    "mongoose": "^5.0.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-jsonschema-form": "^1.0.0",

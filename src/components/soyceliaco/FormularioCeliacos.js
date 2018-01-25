@@ -4,11 +4,19 @@ import React from 'react';
 import {render} from 'react-dom';
 import Form from "react-jsonschema-form";
 
-/* falta hacer la llamada a FormQuestions.js en la carpeta src/data/ */
-
+var schema = require('../../data/FormQuestions.js');
 const log = (type) => console.log.bind(console, type);
 
 class QuestionsSet extends React.Component {
+  handleForm(formData){
+    $.ajax({
+      url: '/soyceliaco',
+      dataType: 'json',
+      type: 'POST',
+      data: formData
+    });
+  }
+
   render () {
     return (
       <section id="soyceliaco" className="section-padding text-justify">
@@ -21,7 +29,7 @@ class QuestionsSet extends React.Component {
             <div className="col-md-12 col-sm-12">
               <Form schema={schema}
                     onChange={log("changed")}
-                    onSubmit={log("submitted")}
+                    onSubmit={this.handleForm}
                     onError={log("errors")} />
             </div>
           </div>
