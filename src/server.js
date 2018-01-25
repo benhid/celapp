@@ -7,6 +7,7 @@ import express from 'express';
 import session from 'express-session';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
+import bodyParser from 'body-parser';
 
 // Pages
 import Index from './components/Index';
@@ -16,11 +17,15 @@ import AdminPanel from './components/AdminPanel';
 
 // Initialize server and database
 let app = express();
-let db = mongoose.connect('mongodb://localhost/my_database', function(err, response){
+let db = mongoose.connect('mongodb://localhost:27017/celiapp', function(err, response){
    if(err){ console.log('Failed to connect to ' + db); }
-   else{ console.log('Connected to ' + db, ' + ', response); }
+   else{ console.log('Connected to ' + db); }
 });
 
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
 app.use(session({
     secret: '2C44-4D44-WppQ38S',
     resave: true,
@@ -81,14 +86,19 @@ app.get('/soyceliaco', function (req, res) {
 });
 
 // INSERT TO DATABASE
-app.post("/soyceliaco",function(req,res){
-  var model = new model(req.body);
-  model.save(function(err,data){
+app.post("/soyceliaco", function(req,res){
+  var Data = mongoose.model('Data', mongoose.Schema({
+    username: String,
+    password: String,
+  }));
+
+  var record = new Data(req.body);
+  record.save(function(err,data){
     if(err){
       res.send(err);
     }
     else{
-      res.send({data:"Record has been Inserted..!!"});
+      res.send({data: "Record has been Inserted..!!"});
     }
   });
 })

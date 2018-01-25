@@ -3,9 +3,9 @@ module.exports = {
   type: "object",
   required: ["title"],
   properties: {
-    title: {title:"Cuestionario 1", type: "object", properties:{
-        "¿Cuál es su molestia predominante?":
-        {type: "string",
+    title: {
+      title:"Cuestionario 1", type: "object", properties:{
+        "¿Cuál es su molestia predominante?": {type: "string",
         enum: ["Digestiva", "Osteoarticular (dolor óseo, inflamación articular, osteoporosis ...)","Dermatológica",
         "Neuropsiquiatrica (insomnio, dolor de cabeza, depresión, ansiedad ...)",
         "Metabólica (cansancio, problemas de peso ...)"]},
@@ -37,7 +37,6 @@ module.exports = {
         "¿Ha tenido dificultades para concebir hijos?":{type:"string",  enum:["Sí", "No"]},
         "¿Ha padecido frecuentemente algunos síntomas de los que se preguntan a continuación?":{type:"string", enum:["Diarrea", "Estreñimiento", "Dolor abdominal no aclarado", "Dolor abdominal que le despierta", "Nauseas/vómitos después de comer", "Digestiones lentas",
           "inflamación abdominal tras las comidas", "Acidez, síntomas de reflujo", "Inflamación de la lengua", "Úlceras aftosas recurrentes orales", "Eczema o picor anal no aclarado", "Ganancia de peso no explicada", "Pérdida de peso no explicada"]}
-
 			}
 		}
   }
