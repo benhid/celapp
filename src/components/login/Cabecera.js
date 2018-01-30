@@ -17,7 +17,7 @@ class Cabecera extends React.Component {
                             <span className="icon-bar"></span>
                             <span className="icon-bar"></span>
                           </button>
-                  <a className="navbar-brand" href="/"><img src="img/logo.png" className="img-responsive" style={{width: 140, marginTop: -16}}/></a>
+                  <a className="navbar-brand" href="#"><img src="img/logo.png" className="img-responsive" style={{width: 140, marginTop: -16}}/></a>
                 </div>
               </div>
             </div>
@@ -30,9 +30,6 @@ class Cabecera extends React.Component {
                 </div>
                 <div className="banner-text text-center">
                   <h1 className="white">Plataforma para diagnosticos de celiaquía</h1>
-                  <p className="intro-text">
-                    A continuación va a relizar...
-                  </p>
                 </div>
                 <div className="overlay-detail text-center">
                   <a href="#"><i className="fa fa-angle-down"></i></a>
