@@ -6,6 +6,7 @@ import Form from "react-jsonschema-form";
 
 //var schemaQuestions = require('../../data/SoyCeliacoQuestions.js');
 var schemaQuestions = require('../../data/SimpleQuestions.js');
+var celiacSchemaQuestions = require('../../data/SoyCeliacoQuestions.js');
 
 class QuestionsSet extends React.Component {
   render () {
@@ -19,6 +20,11 @@ class QuestionsSet extends React.Component {
             </div>
             <div className="col-md-12 col-sm-12">
               <Form schema={schemaQuestions}
+                    method="post"
+                    action="/soyceliaco" />
+            </div>
+            <div className="col-md-12 col-sm-12">
+              <Form schema={celiacSchemaQuestions}
                     method="post"
                     action="/soyceliaco" />
             </div>
