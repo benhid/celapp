@@ -36,7 +36,7 @@ class Cabecera extends React.Component {
                   <h1 className="white">Plataforma para diagnosticos de celiaquía</h1>
                   <p className="intro-text">Una página web gratuita, donde la gente podrá realizar encuestas para poder diagnosticar síntomas de celiaquía y obtener información sobre la misma.
                     <br/>Creado por Miguel Angel, Daniel, Maria Jose, Antonio y Cesar</p>
-                  <a href="#contact" className="btn btn-appoint">Make an Appointment.</a>
+                  <a href="#contact" className="btn btn-appoint">Pedir cita</a>
                 </div>
                 <div className="overlay-detail text-center">
                   <a href="#service"><i className="fa fa-angle-down"></i></a>

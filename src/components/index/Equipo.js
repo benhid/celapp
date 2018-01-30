@@ -37,9 +37,19 @@ class Equipo extends React.Component {
               facebook="#"
               twitter="#"/>
             </div>
+            <div className="col-md-8">
+            <p>Nacido en La Línea de la Concepción en 1964, estudio en el colegio Huerta Fava y en el Instituto Menéndez Tolosa.</p>
+            <p>Licienciado en Medicina y Cirugía por la Facultad de Cádiz (1982-88), obteniendo el Grado de Licenciado con Sobresaliente. Especialización vía MIR en Medicina del Aparato Digestivo en la Ciudad Sanitaria Virgen de las Nieves de Granada entre 1989-93.</p>
+            <p>Es Doctor en Medicina y Cirugía por la Universidad de Granada con la calificación "Cum Laude". Su tesis doctoral versó sobre pacientes con enfermedad de Crohn y colitis ulcerosa.</p>
+            <p>Ha llevado a cabo una intensa actividad como autor de un gran número de publicaciones, artículos científicos, ponencias y participaciones en congresos médicos. Es considerado un experto en enfermedades inflamatorias intestinales, a las que se viene dedicando desde hace 20 años. Se ha dedicado además al estudio de las enfermedades hepáticas y a la endoscopia digestiva.
+            Ha trabajado como Médico de familia, del que posee título, como pediatra, Especialista en Aparato Digestivo entre 1993 y 2005, ha sido Director Médico de USP Hospital de Marbella, Jefe de Servicio de Aparato Digestivo, y Director Gerente en dicho hospital. Actualmente ejerce como Médico especialista en Medicina del Aparato Digestivo y es Presidente del Grupo Hospitalario Humanline.</p>
+
+            </div>
+
           </div>
         </div>
       </section>
+
     );
   }
 }
