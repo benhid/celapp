@@ -8,6 +8,8 @@ import Form from "react-jsonschema-form";
 var schemaQuestions = require('../../data/SimpleQuestions.js');
 var celiacSchemaQuestions = require('../../data/SoyCeliacoQuestions.js');
 
+const onSubmit = ({formData}) => console.log("Data submitted: ",  formData);
+
 class QuestionsSet extends React.Component {
   render () {
     return (
@@ -19,14 +21,12 @@ class QuestionsSet extends React.Component {
               <hr className="botm-line"></hr>
             </div>
             <div className="col-md-12 col-sm-12">
-              <Form schema={schemaQuestions}
-                    method="post"
-                    action="/soyceliaco" />
-            </div>
-            <div className="col-md-12 col-sm-12">
               <Form schema={celiacSchemaQuestions}
-                    method="post"
-                    action="/soyceliaco" />
+                    onSubmit={onSubmit}>
+                    <div>
+                      <button type="submit" className="btn btn-default">Enviar</button>
+                    </div>
+              </Form>
             </div>
           </div>
         </div>
