@@ -4,13 +4,16 @@ import React from 'react';
 import {render} from 'react-dom';
 import Form from "react-jsonschema-form";
 
-//var schemaQuestions = require('../../data/SoyCeliacoQuestions.js');
-var schemaQuestions = require('../../data/SimpleQuestions.js');
-var celiacSchemaQuestions = require('../../data/SoyCeliacoQuestions.js');
-
+const schemaQuestions = require('../../data/SoyCeliacoQuestions.js');
 const onSubmit = ({formData}) => console.log("Data submitted: ",  formData);
+const onError = (errors) => console.log("I have", errors.length, "errors to fix");
 
 class QuestionsSet extends React.Component {
+  onSubmit(event){
+    event.preventDefault();
+    console.log("hola");
+  };
+
   render () {
     return (
       <section id="soyceliaco" className="section-padding text-justify">
@@ -21,11 +24,11 @@ class QuestionsSet extends React.Component {
               <hr className="botm-line"></hr>
             </div>
             <div className="col-md-12 col-sm-12">
-              <Form schema={celiacSchemaQuestions}
-                    onSubmit={onSubmit}>
-                    <div>
-                      <button type="submit" className="btn btn-default">Enviar</button>
-                    </div>
+              <Form schema={schemaQuestions}
+                    onSubmit={this.onSubmit} >
+                <div>
+                  <button type="submit" className="btn btn-default">Enviar</button>
+                </div>
               </Form>
             </div>
           </div>
