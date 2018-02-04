@@ -31,9 +31,6 @@ class Cabecera extends React.Component {
                 <div className="banner-text text-center">
                   <h1 className="white">Plataforma para diagnosticos de celiaquía</h1>
                 </div>
-                <div className="overlay-detail text-center">
-                  <a href="#"><i className="fa fa-angle-down"></i></a>
-                </div>
               </div>
             </div>
           </div>

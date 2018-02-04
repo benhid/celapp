@@ -60,9 +60,9 @@ app.use(express.static('src/static'));
 // GET /login
 app.get('/login', function (req, res) {
   if (req.session && req.session.user === ADMIN_NAME && req.session.admin){
-    res.redirect('/');
+    res.redirect('/adminpanel');
   } else if (req.query.username === ADMIN_NAME && req.query.password === ADMIN_PASSWORD) {
-    req.session.user = "carlos";
+    req.session.user = ADMIN_NAME;
     req.session.admin = true;
     res.redirect('/adminpanel');
   } else {
@@ -95,6 +95,14 @@ app.get('/soyceliaco', function (req, res) {
   res.render('base_layout.ejs', {
     contenido: renderToString(<SoyCeliaco/>)
    })
+});
+
+// GET /soyceliaco ALL
+app.get('/soyceliaco/get/all', auth, function(req,res,next){
+  SoyCeliacoRes.find({}, function(err, result) {
+    if (err) throw err;
+    res.json(result);
+  });
 });
 
 // INSERT /soyceliaco
