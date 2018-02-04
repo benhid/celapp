@@ -10,7 +10,7 @@ class AdminPanel extends React.Component {
     return (
       <div>
         <Cabecera/>
-        <Panel/>
+        <Panel totalSoyCeliaco={this.props.totalSoyCeliaco}/>
       </div>
     );
   }

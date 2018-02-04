@@ -124,9 +124,12 @@ app.post('/soyceliaco', function (req, res) {
 
 // GET /adminpanel
 app.get('/adminpanel', auth, function (req, res) {
-  res.render('base_layout.ejs', {
-    contenido: renderToString(<AdminPanel/>)
-  })
+  SoyCeliacoRes.count({}, function(err, result) {
+    if (err) throw err;
+    res.render('base_layout.ejs', {
+      contenido: renderToString(<AdminPanel totalSoyCeliaco={result} />)
+    })
+  });
 });
 
 // Start server
