@@ -4,16 +4,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import Form from "react-jsonschema-form";
 
-const schemaQuestions = require('../../data/SoyCeliacoQuestions.js');
-const onSubmit = ({formData}) => console.log("Data submitted: ",  formData);
-const onError = (errors) => console.log("I have", errors.length, "errors to fix");
-
 class QuestionsSet extends React.Component {
-  onSubmit(event){
-    event.preventDefault();
-    console.log("hola");
-  };
-
   render () {
     return (
       <section id="soyceliaco" className="section-padding text-justify">
@@ -24,12 +15,27 @@ class QuestionsSet extends React.Component {
               <hr className="botm-line"></hr>
             </div>
             <div className="col-md-12 col-sm-12">
-              <Form schema={schemaQuestions}
-                    onSubmit={this.onSubmit} >
-                <div>
-                  <button type="submit" className="btn btn-default">Enviar</button>
+
+              <form method="post" action="/soyceliaco">
+
+                <div className="form-group">
+                  <label htmlFor="textinput">Input:</label>
+                  <input id="textinput" name="questionA" type="text" className="form-control" placeholder="Enter some text"></input>
                 </div>
-              </Form>
+
+                <div className="form-group">
+                 <label htmlFor="selectioninput">Select list:</label>
+                 <select id="selectioninput" name="questionB" className="form-control">
+                   <option value="resB1">1</option>
+                   <option value="resB2">2</option>
+                   <option value="resB3">3</option>
+                   <option value="resB4">4</option>
+                 </select>
+                </div>
+
+                <input type="submit" value="Submit" className="btn btn-default"></input>
+              </form>
+
             </div>
           </div>
         </div>

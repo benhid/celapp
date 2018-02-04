@@ -15,6 +15,9 @@ import Login from './components/Login';
 import SoyCeliaco from './components/SoyCeliaco';
 import AdminPanel from './components/AdminPanel';
 
+// Models from mongodb
+import SoyCeliacoRes from './models/soyceliacoRes';
+
 // ADMIN CREDENTIALS! KEEP SAVE
 const ADMIN_NAME = 'hu2437';
 const ADMIN_PASSWORD = 'hu2437';
@@ -23,8 +26,8 @@ const ADMIN_PASSWORD = 'hu2437';
 let app = express();
 
 let db = mongoose.connect('mongodb://localhost:27017/celiapp', function(err, response){
-   if(err){ console.log('Failed to connect to ' + db); }
-   else{ console.log('Connected to ' + db); }
+   if(err){ console.log('Failed to connect to database'); }
+   else{ console.log('Connected to database!!'); }
 });
 
 app.use(bodyParser.urlencoded({
@@ -54,7 +57,7 @@ var auth = function(req, res, next) {
 // Serve static files from the 'public' folder
 app.use(express.static('src/static'));
 
-// GET /login?username=&password=
+// GET /login
 app.get('/login', function (req, res) {
   if (req.session && req.session.user === ADMIN_NAME && req.session.admin){
     res.redirect('/');
@@ -92,6 +95,23 @@ app.get('/soyceliaco', function (req, res) {
   res.render('base_layout.ejs', {
     contenido: renderToString(<SoyCeliaco/>)
    })
+});
+
+// INSERT /soyceliaco
+app.post('/soyceliaco', function (req, res) {
+  var respuestas = [];
+
+  Object.keys(req.body).forEach(function(key) {
+    var respuesta = {pregunta: key, respuesta: req.body[key]};
+    respuestas.push(respuesta);
+  });
+
+  var resPoll = new SoyCeliacoRes({ respuestas: respuestas });
+  resPoll.save();
+
+  res.render('base_layout.ejs', {
+    contenido: renderToString(<SoyCeliaco showModal/>)
+  })
 });
 
 // GET /adminpanel
