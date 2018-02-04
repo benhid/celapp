@@ -14,6 +14,7 @@ import Index from './components/Index';
 import Login from './components/Login';
 import SoyCeliaco from './components/SoyCeliaco';
 import AdminPanel from './components/AdminPanel';
+import Formulario from './components/Formulario';
 
 // Models from mongodb
 import SoyCeliacoRes from './models/soyceliacoRes';
@@ -56,6 +57,7 @@ var auth = function(req, res, next) {
 
 // Serve static files from the 'public' folder
 app.use(express.static('src/static'));
+app.use('/soyceliaco', express.static('src/static'));
 
 // GET /login
 app.get('/login', function (req, res) {
@@ -87,21 +89,23 @@ app.get('/logout', function (req, res) {
 app.get('/', function (req, res) {
   res.render('base_layout.ejs', {
     contenido: renderToString(<Index/>)
-   })
+  })
 });
 
 // GET /soyceliaco
 app.get('/soyceliaco', function (req, res) {
   res.render('base_layout.ejs', {
     contenido: renderToString(<SoyCeliaco/>)
-   })
+  })
 });
 
 // GET /soyceliaco ALL
-app.get('/soyceliaco/get/all', auth, function(req,res,next){
-  SoyCeliacoRes.find({}, function(err, result) {
+app.get('/soyceliaco/all', function(req,res,next){
+  SoyCeliacoRes.find({}).lean().exec(function(err, results) {
     if (err) throw err;
-    res.json(result);
+    res.render('base_layout.ejs', {
+      contenido: renderToString(<Formulario datos={results}/>)
+    })
   });
 });
 

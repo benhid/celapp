@@ -17,7 +17,7 @@ class Panel extends React.Component {
 
               <p>Total de encuestas de celíacos confirmados almacenadas: { this.props.totalSoyCeliaco }</p>
               <div className="btn-group btn-group-sm">
-                <a type="button" className="btn btn-primary" href="/soyceliaco/get/all">OBTENER RESULTADOS</a>
+                <a type="button" className="btn btn-primary" href="/soyceliaco/all">OBTENER RESULTADOS</a>
                 <a type="button" className="btn btn-primary" href="#">EDITAR PREGUNTAS</a>
               </div>
               <p>&nbsp;</p>
