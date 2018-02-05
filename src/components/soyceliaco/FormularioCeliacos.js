@@ -35,13 +35,13 @@ for (var a=0; a< celiacSchemaQuestions.SetQuestion.length; a++){
      <label htmlFor="textinput">{Pregunta.pregunta}</label>
      <input id="textinput" name={Pregunta.pregunta} type="text" className="form-control" placeholder="Rellename"></input>
    </div>);
-    }else if(Pregunta.type=="checkbox"){
+    }else if(Pregunta.type=="radio"){
       var options = [];
       for(var j=0; j<Pregunta.enum.length; j++){
         options.push(
         <div>
-        <label class="form-check-label" htmlfor="inlineCheckbox1">{Pregunta.enum[j]}</label>
         <input class="form-check-input" name={Pregunta.pregunta} type="radio" id="blankCheckbox" value={Pregunta.enum[j]} ></input>   
+        <label class="form-check-label" htmlfor="inlineCheckbox1">{Pregunta.enum[j]}</label>
         </div>);
       }
       ident.push(<div class="form-check form-check-inline">
@@ -53,8 +53,21 @@ for (var a=0; a< celiacSchemaQuestions.SetQuestion.length; a++){
                     <label htmlFor="example-date-input">{Pregunta.pregunta}</label>
                     <input id="example-date-input" name={Pregunta.pregunta} type="date" className="form-control" ></input>
                   </div>);
-    }
+    }else if(Pregunta.type=="checkbox"){
+      var options = [];
+      for(var j=0; j<Pregunta.enum.length; j++){
+        options.push(
+        <div>
+        <input class="form-check-input" name={Pregunta.pregunta} type="checkbox" id="defaultCheck1" value={Pregunta.enum[j]} ></input>   
+        <label class="form-check-label" htmlfor="inlineCheckbox1">{Pregunta.enum[j]}</label>
+        </div>);
+      }
+      ident.push(<div class="form-check">
+                  <p>{Pregunta.pregunta}</p>
+                  {options}
+                </div>);
   }
+}
 }
 
 
